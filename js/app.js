@@ -5,6 +5,11 @@ function adicionar(){
     let produtoEValor = document.getElementById('produto').value;
     let quantidade = document.getElementById('quantidade').value;
 
+    if (isNaN(quantidade) || quantidade <= 0){
+        alert('Insira uma quantidade válida!');
+        return;
+    }
+
     let [produto, valorUnitario] = produtoEValor.split("-");
     valorUnitario = valorUnitario.replace('R$', '');
     let preco = valorUnitario * quantidade;
